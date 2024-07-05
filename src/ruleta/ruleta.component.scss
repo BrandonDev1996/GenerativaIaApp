@@ -1,0 +1,28 @@
+.roulette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .roulette-wheel {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 4s ease-out;
+  }
+  
+  .segment {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    text-align: center;
+    line-height: 100px; /* Ajusta según sea necesario */
+    box-sizing: border-box;
+    color: white; /* Asegúrate de que el texto sea visible */
+  }
+  
