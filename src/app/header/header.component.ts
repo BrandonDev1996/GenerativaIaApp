@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Producto } from '../core/models/producto';
-import { logo, productos } from '../core/img-codificadas';
 import { CommonModule } from '@angular/common';
+import { ProductoService } from '../core/service/producto/producto.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-  logo:string = logo
-  productos: Producto[] = productos
-  constructor(){
+  productos: Producto[] =  []
+  constructor(private productoSvc: ProductoService){
   }
-
+  ngOnInit(): void {
+    this.productoSvc.getProductos().subscribe(response => {
+      this.productos =  response;
+    })
+  }
 }
