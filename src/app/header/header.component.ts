@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import { stich } from '../core/img-codificadas';
 import { Producto } from '../core/models/producto';
+import { logo, productos } from '../core/img-codificadas';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
-  stich: Producto = stich
+  logo:string = logo
+  productos: Producto[] = productos
   constructor(){
-    console.log(this.stich.nombre)
   }
 
 }

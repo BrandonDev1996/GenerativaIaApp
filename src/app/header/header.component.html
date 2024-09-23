@@ -1,7 +1,9 @@
 <!-- header.component.html -->
 <header class="bg-blue-600 text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">B.Y Impresiones 3D</h1>
+        <img [src]="logo" alt="v1.0.0" class="logo">
+        <h1 class="text-2xl font-bold">B.Y Impresiones 3D
+        </h1>
         <nav>
             <ul class="flex space-x-4">
                 <li><a routerLink="/" class="hover:text-blue-300">Inicio</a></li>
@@ -13,18 +15,21 @@
 </header>
 
 
-<main class="p-4">
+<main class="p-80">
     <h2 class="text-xl font-semibold">Productos</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img [src]="stich.imgCode" alt="Nombre del producto" class="w-full h-48 object-cover">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 ">
+        <div *ngFor="let p of productos" class="borde-resaltado ">
+            <img [src]="p.imgCode" alt="{{ p.nombre }}" class="w-full h-48 object-cover">
             <div class="p-4">
-                <h3 class="text-lg font-semibold">{{stich.nombre.toLocaleUpperCase()}}</h3>
-                <h3 class="text-lg font-semibold">Precio: ${{stich.precio}}</h3>
-                <p class="text-gray-700">Like:{{stich.like}}</p>
-                <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500">Agregar al
-                    Carrito</button>
+                <h3 class="text-lg font-semibold">{{ p.nombre.toUpperCase() }}</h3>
+                <h3 class="text-lg font-semibold">Precio: ${{ p.precio }}</h3>
+                <button class="flex items-center border border-blue-500 rounded-md p-2 hover:bg-blue-100">
+                    <i class="fas fa-thumbs-up mr-1"></i>{{ p.like }}
+                  </button>
+                  <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500">
+                    Agregar al Carrito
+                  </button>
+                  
             </div>
         </div>
     </div>

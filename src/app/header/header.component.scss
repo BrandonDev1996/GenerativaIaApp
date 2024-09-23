@@ -1,0 +1,18 @@
+.logo{
+    width: 100px;
+    height: 100px
+}
+.borde-resaltado {
+    @apply border-2 border-blue-500 rounded-md transition duration-300;
+  
+    &:hover {
+      @apply border-red-500 shadow-xl;
+    }
+
+  }
+  
+  main {    
+    color: white;
+    background: linear-gradient(135deg, #4e3b31, #7c6a5b); 
+  }
+  
