@@ -16,6 +16,12 @@ export class HeaderComponent implements OnInit {
   constructor(private productoSvc: ProductoService){
   }
   ngOnInit(): void {
+    if(this.productos){
+      this.getProductos()
+    }
+  }
+
+  getProductos(){
     this.productoSvc.getProductos().subscribe(response => {
       this.productos =  response;
     })

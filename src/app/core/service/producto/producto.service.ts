@@ -8,11 +8,11 @@ import { Producto } from '../../models/producto';
 })
 export class ProductoService {
 
-  constructor(private http: HttpClient) { }
-  url = "https://cvappbackend.onrender.com"
+  constructor(private http: HttpClient) {}
+  url = "https://cvappbackend.onrender.com/api-gestor-de-productos/producto"
 
   getProductos(): Observable<Producto[]> {
-    return this.http.get<Producto[]>("url" + "/producto");
+    return this.http.get<Producto[]>(this.url);
   }
 
 
