@@ -1,10 +1,9 @@
 <!-- header.component.html -->
 <header class="bg-blue-600 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <img [src]="" alt="v1.0.0" class="logo">
-        <h1 class="text-2xl font-bold">B.Y Impresiones 3D
-        </h1>
-        <nav>
+    <div class="container mx-auto flex items-center"> <!-- Contenedor Flex -->
+        <img src="assets/logo-sinfondo.png" alt="v1.0.0" class="logo w-24 h-24"> <!-- Tamaño del logo -->
+        <h1 class="text-2xl font-bold mx-auto">B.Y Impresiones 3D</h1> <!-- Texto centrado -->
+        <nav class="ml-auto"> <!-- Empuja el nav hacia la derecha -->
             <ul class="flex space-x-4">
                 <li><a routerLink="/" class="hover:text-blue-300">Inicio</a></li>
                 <li><a routerLink="/servicios" class="hover:text-blue-300">Servicios</a></li>
@@ -15,8 +14,12 @@
 </header>
 
 
-<main class="p-80">
-    <h2 class="text-xl font-semibold">Productos</h2>
+
+
+
+
+<main >
+    <h1 class="text-xl font-semibold">Productos</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 ">
         <div *ngFor="let p of productos" class="borde-resaltado ">
             <img [src]="p.imagen" alt="{{ p.nombre }}" class="w-full h-48 object-cover">

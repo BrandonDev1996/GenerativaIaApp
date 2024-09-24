@@ -1,18 +1,28 @@
-.logo{
-    width: 100px;
-    height: 100px
+.logo {
+  width: 100px;
+  height: 100px;
 }
+
 .borde-resaltado {
-    @apply border-2 border-blue-500 rounded-md transition duration-300;
-  
-    &:hover {
+  @apply border-2 border-blue-500 rounded-md transition duration-300;
+
+  &:hover {
       @apply border-red-500 shadow-xl;
-    }
+  }
+}
+
+main {    
+  color: white;
+  background: linear-gradient(135deg, #4e3b31, #7c6a5b); 
+}
+
+/* Asegurando que las tarjetas ocupen el ancho completo en móviles */
+@media (max-width: 640px) {
+  .borde-resaltado {
+      width: 100%;
+  }
+  main{
+        padding: 0%;
 
   }
-  
-  main {    
-    color: white;
-    background: linear-gradient(135deg, #4e3b31, #7c6a5b); 
-  }
-  
+}
