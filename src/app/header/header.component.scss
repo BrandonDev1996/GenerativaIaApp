@@ -3,12 +3,21 @@
   height: 100px;
 }
 
+.spinner-box{
+  height: 200px;
+  width: 200px;
+  background-color: #4e3b31;
+  margin-left: 35px
+}
+
 .borde-resaltado {
   @apply border-2 border-blue-500 rounded-md transition duration-300;
-
+  height: 450px;
   &:hover {
       @apply border-red-500 shadow-xl;
   }
+    padding: 10%;
+
 }
 
 main {    
